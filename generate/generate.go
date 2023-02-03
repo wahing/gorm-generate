@@ -98,20 +98,24 @@ func generateModel(table Table, fields []Field) {
 // 获取字段类型
 func getFiledType(field Field) string {
 	typeArr := strings.Split(field.Type, "(")
-
-	switch typeArr[0] {
+	//会有无符号结构，去除
+	T := strings.Split(typeArr[0], " ")
+	fmt.Println(T[0])
+	switch T[0] {
 	case "int":
 		return "int32"
+	// case "int unsigned": //无符号
+	// 	return "int32"
 	case "integer":
 		return "int32"
 	case "mediumint":
-		return "int"
+		return "int32"
 	case "bit":
-		return "int"
+		return "int32"
 	case "year":
-		return "int"
+		return "int32"
 	case "smallint":
-		return "int"
+		return "int32"
 	case "tinyint":
 		return "int32"
 	case "bigint":
