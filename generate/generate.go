@@ -49,7 +49,7 @@ func getFields(tableName string) []Field {
 
 // 生成Model
 func generateModel(table Table, fields []Field) {
-	content := "package models\n\n"
+	content := "package model\n\n"
 	//表注释
 	if len(table.Comment) > 0 {
 		content += "// " + table.Comment + "\n"
