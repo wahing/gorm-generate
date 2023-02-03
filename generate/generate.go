@@ -100,7 +100,6 @@ func getFiledType(field Field) string {
 	typeArr := strings.Split(field.Type, "(")
 	//会有无符号结构，去除
 	T := strings.Split(typeArr[0], " ")
-	fmt.Println(T[0])
 	switch T[0] {
 	case "int":
 		return "int32"
