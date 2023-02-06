@@ -68,7 +68,7 @@ func generateModel(table Table, fields []Field) {
 	tableName := getTableName(table)
 	content += "\r\n\r\n" + tableName
 
-	filename := conf.ModelPath + generator.CamelCase(table.Name) + ".go"
+	filename := conf.ModelPath + table.Name + ".go"
 	var f *os.File
 	var err error
 	if checkFileIsExist(filename) {
@@ -91,7 +91,7 @@ func generateModel(table Table, fields []Field) {
 	if err != nil {
 		panic(err)
 	} else {
-		fmt.Println(generator.CamelCase(table.Name) + " 已生成...")
+		fmt.Println(table.Name + " 已生成...")
 	}
 }
 
